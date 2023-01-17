@@ -94,14 +94,14 @@ export class AppComponent {
     let parentElement: HTMLElement;
     compList.forEach((list: any) => {
       this.divParentEle = this.renderer.createElement("div");
-      this.divParentEle.classList.add("states");
+      this.divParentEle.classList.add("states"); 
       let element = document.createElement(list.tagName);
       if (Object.keys(list.attributes).length) {
         for (const [key, value] of Object.entries(list.attributes)) {
           element.setAttribute(key, value);
         }
       }
-
+  
       if(list.tagName === "select" && list.hasOwnProperty("options")){
         list.options.forEach((optValue:string) =>{
           let optionEle = document.createElement("option");
@@ -121,7 +121,6 @@ export class AppComponent {
         })
         this.divParentEle.appendChild(dataInput);
       }
-
       if (list.hasOwnProperty("groupName")) {
         element.className = list.groupName;
       }
@@ -137,6 +136,9 @@ export class AppComponent {
       }
       else if (list.tagName === "button") {
         parentElement = this.buttonEle.nativeElement;
+      }
+      if(list.tagName === "input" && (list.attributes.type === "radio"||list.attributes.type === "checkbox")){
+        parentElement = this.radioEle.nativeElement;
       }
       this.renderer.appendChild(parentElement, this.divParentEle);
 

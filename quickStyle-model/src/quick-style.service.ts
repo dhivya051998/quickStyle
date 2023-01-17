@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Attribute, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -75,7 +75,7 @@ export class QuickStyleService {
         inputGroup: {
           default: {
             "height": "var(--inputSize-m)",
-            "width": "250px",
+            "width": "250px", 
             "padding": "4px 10px",
             "border": "var(--borderSize-s) solid var(--primary)",
             "border-radius": "var(--radius-m)",
@@ -97,7 +97,8 @@ export class QuickStyleService {
             "padding": "8px 15px",
             "border-radius": "var(--radius-m)",
             "color": "#fff",
-            "border": "none"
+            "border": "none",
+            "cursor":"pointer",
           },
           hover: {
 
@@ -112,24 +113,6 @@ export class QuickStyleService {
 
           }
         },
-        radioGroup: {
-          default: {
-            "height": "50px",
-            "width": "50px",
-          },
-          hover: {
-
-          },
-          checked: {
-
-          },
-          "not(:checked)": {
-
-          },
-          disabled: {
-
-          }
-        }
       }
     },
     componentList: [
@@ -140,7 +123,7 @@ export class QuickStyleService {
           placeholder: "text"
         },
         groupName: "inputGroup",
-        specific: {
+        specific: {  
           default: {
             "border": "1px solid transparent",
             "box-shadow": "0 2px 5px 1px rgb(64 60 67 / 16%)",
@@ -452,22 +435,28 @@ export class QuickStyleService {
           id: "man"
         },
         labelName: "man",
-        groupName: "radioGroup",
         specific: {
           default: {
-
+            "height":"25px",
+            "width":"25px",
+            "appearance": "none",
+            "border": "1px solid black",
+            "border-radius": "50%",
+            "background-image": "url(http://cdn.onlinewebfonts.com/svg/img_504781.png)",
+            "background-size": "cover", 
+            "cursor":"pointer",
           },
           hover: {
-
+            "border": "2px solid var(--primary)",
           },
           checked: {
-
-          },
-          "not(:checked)": {
+            "background-image": "url(https://www.svgrepo.com/download/88683/woman.svg)",
+          },  
+          focus:{
 
           },
           disabled: {
-
+           "opacity":0.6
           }
         }
       },
@@ -479,25 +468,30 @@ export class QuickStyleService {
           id: "red"
         },
         labelName: "red",
-        groupName: "radioGroup",
         specific: {
           default: {
-
+            "height":"25px",
+            "width":"25px",
+            "appearance": "none",
+            "border": "1px solid black",
+            "background-size": "cover", 
+            "cursor":"pointer",
+            "border-radius":"var(--radius-m)"
           },
           hover: {
-
+            "border": "2px solid var(--primary)",
           },
           checked: {
-
+            "background-image":"url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3uRfFFTdwtJBBRDuybKlX1oyQXQjCPa3RVw&usqp=CAU)"
           },
-          "not(:checked)": {
+          focus:{
 
           },
           disabled: {
-
+            "opacity":0.6
           }
         }
-      }
+      },
     ]
   }
 
